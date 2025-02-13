@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import api from '../api'; // Certifique-se de que isso está configurado no arquivo api.js
+import { Link } from 'react-router-dom';
+import api from '../api';
+import Charts from './Charts'; // Componente de gráficos
 
 const Dashboard = () => {
-    const [data, setData] = useState({}); // Armazena os dados do backend
-
     useEffect(() => {
-        // Faz a requisição ao backend
         api.get('/dashboard')
-            .then((response) => {
-                setData(response.data); // Atualiza o estado com os dados recebidos
-            })
             .catch((error) => {
                 console.error('Erro ao buscar dados do dashboard:', error);
             });
     }, []);
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <p>{data.message}</p>
-            <p>Usuário: {data.user}</p>
-            <p>Saldo: R$ {data.balance}</p>
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+            {/* Botão para voltar ao menu */}
+            <div style={{ marginBottom: '20px' }}>
+                <Link to="/">
+                    <button style={{ padding: '10px 20px', fontSize: '16px' }}>
+                        Voltar ao Menu
+                    </button>
+                </Link>
+            </div>
+            <h1>Dashboard Financeiro</h1>
+            {/* Gráfico */}
+            <Charts />
         </div>
     );
 };
