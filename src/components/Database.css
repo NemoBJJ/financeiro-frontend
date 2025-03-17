@@ -19,6 +19,15 @@
     margin: 0 auto;
 }
 
+/* Cores personalizadas para as barras do gráfico */
+.recharts-bar-rectangle {
+    fill: #000000; /* Preto */
+}
+
+.recharts-bar-rectangle:nth-child(2) {
+    fill: #003366; /* Azul escuro */
+}
+
 /* TABELA */
 .database table {
     width: 100%;
