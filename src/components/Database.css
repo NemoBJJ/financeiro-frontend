@@ -1,14 +1,32 @@
+/* CONTAINER PRINCIPAL */
 .database {
     text-align: center;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* TÍTULO */
+.database h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* GRÁFICO */
+.recharts-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* TABELA */
 .database table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
+/* CABEÇALHO E CÉLULAS */
 .database th,
 .database td {
     border: 1px solid #ddd;
@@ -16,37 +34,38 @@
     text-align: left;
 }
 
+/* ESTILO DO CABEÇALHO */
 .database th {
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: white;
 }
 
-.pagination {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* LINHAS ALTERNADAS */
+.database tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
-.pagination button {
-    padding: 10px 20px;
-    border: none;
+.database tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* BOTÕES */
+.database button {
+    padding: 10px 15px;
+    font-size: 1rem;
     background-color: #4caf50;
     color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.pagination button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.pagination button:hover:not(:disabled) {
+.database button:hover {
     background-color: #45a049;
 }
 
-/* Estilo para o botão de voltar ao menu */
+/* BOTÃO VOLTAR */
 .back-to-menu {
     margin-top: 20px;
 }
@@ -54,14 +73,38 @@
 .back-button {
     padding: 10px 20px;
     font-size: 1rem;
-    color: #fff;
     background-color: #ff5c5c;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .back-button:hover {
     background-color: #e60000;
+}
+
+/* RESPONSIVIDADE NO MOBILE */
+@media (max-width: 768px) {
+    .database {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    /* Reduz tamanho da tabela no mobile */
+    .database table {
+        width: 100%;
+    }
+
+    .database th,
+    .database td {
+        padding: 5px;
+        font-size: 0.85rem;
+    }
+
+    /* Ajusta botões no mobile */
+    .database button {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
 }
